@@ -1,0 +1,12 @@
+.square-design {
+  height: 15vw;
+  width: 15vw;
+  background-color: beige;
+  border: 1px gray solid;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.square-design:focus {
+  outline: none;
+}

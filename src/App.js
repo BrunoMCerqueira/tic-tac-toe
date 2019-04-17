@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import WrapSquares from './components/WrapSquares';
 
 class App extends Component {
   render() {
-    return <h1>aa</h1>
+    return <WrapSquares />
   }
 }
 

@@ -3,7 +3,11 @@ import WrapSquares from './components/WrapSquares';
 
 class App extends Component {
   render() {
-    return <WrapSquares />
+    return (
+      <div>
+        <WrapSquares />
+      </div>
+    )
   }
 }
 

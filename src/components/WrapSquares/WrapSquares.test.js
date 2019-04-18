@@ -1,9 +1,16 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import WrapSquares from "../WrapSquares";
 
 describe("Test WrapSquare Component", () => {
+  let wrapper;
+  beforeEach(() => { wrapper = mount(<WrapSquares />); });
+
   it("Renders ok", () => {
-    shallow(<WrapSquares />);
+    expect(wrapper.find("main.wrap-squares-design")).toHaveLength(1);
   })
+
+  it('Renders 9 squares buttons', () => {
+    expect(wrapper.find("button.square-design")).toHaveLength(9);
+  });
 });

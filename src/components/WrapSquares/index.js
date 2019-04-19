@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SquareGame from "../SquareGame";
 import "./styles.css"
 import NextPlayer from "../NextPlayer";
+import HistoryPlays from "../HistoryPlays";
 
 class WrapSquares extends Component {
   state = { player: "X" };
@@ -25,6 +26,7 @@ class WrapSquares extends Component {
         <main>
           {this.multiplySquares()}
         </main>
+        <HistoryPlays/>
       </div>
     )
   }

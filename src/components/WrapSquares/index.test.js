@@ -13,4 +13,15 @@ describe("Test WrapSquare Component", () => {
   it('Renders 9 squares buttons', () => {
     expect(wrapper.find("button.square-design")).toHaveLength(9);
   });
+
+  it('Renders a history list', () => {
+    expect(wrapper.find("ol")).toHaveLength(1);
+  });
+
+  it('When player clicks button shift current player', () => {
+    expect(wrapper.find('p').text()).toEqual('Next Player: X');
+    wrapper.find('button').at(1).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('p').text()).toEqual('Next Player: O');
+  });
 });

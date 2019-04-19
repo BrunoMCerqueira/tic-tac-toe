@@ -4,7 +4,7 @@ import "./styles.css";
 class NextPlayer extends Component {
   render() {
     return (
-      <p className="player-playing-design">Next Player: X</p>
+      <p className="player-playing-design">Next Player: { this.props.player }</p>
     )
   }
 }

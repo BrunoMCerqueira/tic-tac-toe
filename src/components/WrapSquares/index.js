@@ -1,21 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import SquareGame from "../SquareGame";
 import "./styles.css"
 import NextPlayer from "../NextPlayer";
 
-const multiplySquares = () => {
-  const squares = Array(9).fill();
+class WrapSquares extends Component {
+  state = { player: "X" };
 
-  return squares.map((_, index) => <SquareGame key={index}/>)
+  handleClick = () => {
+    this.setState({ player: this.state.player === "X" ? "O" : "X" });
+  }
+
+  multiplySquares = () => {
+    const squares = Array(9).fill();
+  
+    return squares.map((_, index) => (
+      <SquareGame key={index} content={this.state.player} handleClick={this.handleClick}/>)
+    )
+  }
+
+  render () {
+    return (
+      <div className="app-wrap">
+        <NextPlayer player={this.state.player}/>
+        <main>
+          {this.multiplySquares()}
+        </main>
+      </div>
+    )
+  }
 }
-
-const WrapSquares = () => (
-  <div className="app-wrap">
-    <NextPlayer/>
-    <main>
-      {multiplySquares()}
-    </main>
-  </div>
-)
 
 export default WrapSquares;

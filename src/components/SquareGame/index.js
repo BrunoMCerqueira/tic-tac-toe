@@ -1,6 +1,12 @@
 import React from "react";
 import "./styles.css";
 
-const SquareGame = () => <button className="square-design"></button>
+const SquareGame = ({ content, handleClick }) => (
+  <button 
+    onClick={handleClick}
+    className="square-design">
+    { content }
+  </button>
+)
 
 export default SquareGame;

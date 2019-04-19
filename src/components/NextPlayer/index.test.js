@@ -4,7 +4,7 @@ import NextPlayer from "../NextPlayer";
 
 describe("Test component Next Player", () => {
   it("renders a `p` element", () => {
-    const p_element = shallow(<NextPlayer/>);
+    const p_element = shallow(<NextPlayer player={"X"}/>);
     expect(p_element).toHaveLength(1);
     expect(p_element.text()).toEqual('Next Player: X');
   })

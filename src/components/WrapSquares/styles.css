@@ -1,4 +1,5 @@
-.wrap-squares-design {
+.app-wrap {
   width: 50vw;
-  display: inline-block;
+  text-align: center;
+  margin: auto;
 }

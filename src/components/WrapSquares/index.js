@@ -1,6 +1,7 @@
 import React from "react";
 import SquareGame from "../SquareGame";
 import "./styles.css"
+import NextPlayer from "../NextPlayer";
 
 const multiplySquares = () => {
   const squares = Array(9).fill();
@@ -9,9 +10,12 @@ const multiplySquares = () => {
 }
 
 const WrapSquares = () => (
-  <main className="wrap-squares-design">
-    {multiplySquares()}
-  </main>
+  <div className="app-wrap">
+    <NextPlayer/>
+    <main>
+      {multiplySquares()}
+    </main>
+  </div>
 )
 
 export default WrapSquares;

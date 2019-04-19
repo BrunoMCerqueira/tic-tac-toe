@@ -7,7 +7,7 @@ describe("Test WrapSquare Component", () => {
   beforeEach(() => { wrapper = mount(<WrapSquares />); });
 
   it("Renders ok", () => {
-    expect(wrapper.find("main.wrap-squares-design")).toHaveLength(1);
+    expect(wrapper.find("main")).toHaveLength(1);
   })
 
   it('Renders 9 squares buttons', () => {

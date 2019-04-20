@@ -6,7 +6,7 @@ describe("Test WrapSquare Component", () => {
   let wrapper;
   beforeEach(() => { wrapper = mount(<WrapSquares />); });
 
-  it("Renders ok", () => {
+  it("Renders a `main` element", () => {
     expect(wrapper.find("main")).toHaveLength(1);
   })
 
@@ -23,5 +23,14 @@ describe("Test WrapSquare Component", () => {
     wrapper.find('button').at(1).simulate('click');
     wrapper.update();
     expect(wrapper.find('p').text()).toEqual('Next Player: O');
+  });
+
+  it('First click button fill with `X` and second click fill with `O`', () => {
+    wrapper.find('button').at(1).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('button').at(1).text()).toEqual('X');
+    wrapper.find('button').at(2).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('button').at(2).text()).toEqual('O');
   });
 });

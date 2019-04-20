@@ -4,15 +4,10 @@ import SquareGame from "../SquareGame";
 
 describe("Test WrapSquare Component", () => {
   let wrapper;
-  beforeEach(() => { wrapper = shallow(<SquareGame content="X"  handleClick={() => console.log("a")}/>); });
+  beforeEach(() => { wrapper = shallow(<SquareGame square="X"  handleClick=""/>); });
 
-  it("Renders ok", () => {
+  it("Renders button with square content", () => {
     expect(wrapper.find("button")).toHaveLength(1);
+    expect(wrapper.find("button").text()).toEqual("X");
   })
-
-  it('When player X click button, fill button with `X`', () => {
-    wrapper.find('button').simulate('click');
-    wrapper.update();
-    expect(wrapper.find('button').text()).toEqual('X');
-  });
 });

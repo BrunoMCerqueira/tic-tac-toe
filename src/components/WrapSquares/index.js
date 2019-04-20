@@ -5,17 +5,25 @@ import NextPlayer from "../NextPlayer";
 import HistoryPlays from "../HistoryPlays";
 
 class WrapSquares extends Component {
-  state = { player: "X" };
+  state = { player: "X", squares: Array(9).fill("") };
 
-  handleClick = () => {
-    this.setState({ player: this.state.player === "X" ? "O" : "X" });
+  handleClick = (index) => {
+    const { player, squares } = this.state;
+    squares[index] = player;
+
+    this.setState({ 
+      player: player === "X" ? "O" : "X",
+      squares,
+    });
   }
 
   multiplySquares = () => {
-    const squares = Array(9).fill();
+    const numberSquares = Array(9).fill();
   
-    return squares.map((_, index) => (
-      <SquareGame key={index} content={this.state.player} handleClick={this.handleClick}/>)
+    return numberSquares.map((_, index) => (
+      <SquareGame key={index} handleClick={() => this.handleClick(index)}
+        square={this.state.squares[index]}
+      />)
     )
   }
 

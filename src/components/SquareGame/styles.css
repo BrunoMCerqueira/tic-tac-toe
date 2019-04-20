@@ -6,6 +6,7 @@
   cursor: pointer;
   box-sizing: border-box;
   font-size: 5vw;
+  vertical-align: top;
 }
 
 .square-design:focus {

@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "./styles.css";
 
 class SquareGame extends Component {
-  state = { point: "", disabled: false };
+  state = { disabled: false };
   updateStatePlayer = () => {
-    this.setState({ point: this.props.content, disabled: !this.state.disabled });
+    const { disabled } = this.state;
+    this.setState({ disabled: !disabled });
     this.props.handleClick();
   }
 
@@ -14,7 +15,7 @@ class SquareGame extends Component {
         onClick={this.updateStatePlayer}
         className="square-design"
         disabled={this.state.disabled}>
-          { this.state.point }
+          { this.props.square }
       </button>
     )
   }

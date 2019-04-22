@@ -5,7 +5,9 @@ import "./styles.css";
 class App extends Component {
   render() {
     return (
-      <WrapSquares />
+      <div className="d-flex justify-content-center w-100">
+        <WrapSquares />
+      </div>
     )
   }
 }

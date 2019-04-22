@@ -21,7 +21,9 @@ class WrapSquares extends Component {
     const numberSquares = Array(9).fill();
   
     return numberSquares.map((_, index) => (
-      <SquareGame key={index} handleClick={() => this.handleClick(index)}
+      <SquareGame 
+        key={index}
+        handleClick={() => this.handleClick(index)}
         square={this.state.squares[index]}
       />)
     )

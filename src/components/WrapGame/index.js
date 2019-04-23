@@ -4,7 +4,7 @@ import "./styles.css"
 import NextPlayer from "../NextPlayer";
 import HistoryPlays from "../HistoryPlays";
 
-class WrapSquares extends Component {
+class WrapGame extends Component {
   state = { player: "X", squares: Array(9).fill(""), history: [] };
 
   handleClick = (index) => {
@@ -33,17 +33,23 @@ class WrapSquares extends Component {
 
   render () {
     return (
-      <div className="app-wrap">
-        <NextPlayer player={this.state.player}/>
-        <main>
-          {this.multiplySquares()}
-        </main>
-        <HistoryPlays
-          history={this.state.history} 
-        />
-      </div>
+      <>
+        <div className="d-flex justify-content-center">
+          <div className="app-wrap">
+            <NextPlayer player={this.state.player}/>
+            <main>
+              {this.multiplySquares()}
+            </main>
+          </div>
+        </div>
+        <div className="d-flex justify-content-center">
+          <HistoryPlays
+            history={this.state.history} 
+          />
+        </div>
+      </>
     )
   }
 }
 
-export default WrapSquares;
+export default WrapGame;

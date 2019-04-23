@@ -1,10 +1,14 @@
 import React from "react";
 import { mount } from "enzyme";
-import WrapSquares from "../WrapSquares";
+import WrapGame from "../WrapGame";
 
 describe("Test WrapSquare Component", () => {
   let wrapper;
-  beforeEach(() => { wrapper = mount(<WrapSquares />); });
+  beforeEach(() => { wrapper = mount(<WrapGame />); });
+
+  it('Contains a `p` indicating player', () => {
+    expect(wrapper.find("p.player-playing-design")).toHaveLength(1);
+  });
 
   it("Renders a `main` element", () => {
     expect(wrapper.find("main")).toHaveLength(1);

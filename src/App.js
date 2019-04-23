@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import WrapSquares from './components/WrapSquares';
-import "./styles.css";
+import WrapGame from './components/WrapGame';
 
 class App extends Component {
   render() {
     return (
-      <div className="d-flex justify-content-center w-100">
-        <WrapSquares />
-      </div>
+      <WrapGame />
     )
   }
 }

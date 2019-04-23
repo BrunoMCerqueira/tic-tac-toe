@@ -6,7 +6,11 @@ class HistoryPlays extends Component {
     const { history } = this.props;
     return (
       <ol className="histories-list">
-        {history && history.map((history, index) => <li className="history-line" key={index}>Jogada {index + 1}</li>)}
+        {history && history.map((_, index) => (
+          <li className="history-line" key={index} onClick={() => this.props.goPast(index)}>
+            {index}
+          </li>
+        ))}
       </ol>
     )
   }

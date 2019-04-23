@@ -7,6 +7,8 @@ import HistoryPlays from "../HistoryPlays";
 class WrapGame extends Component {
   state = { player: "X", squares: Array(9).fill(""), history: [] };
 
+  goPast = (index) => this.setState({ squares: this.state.history[index] });
+
   handleClick = (index) => {
     const { player } = this.state;
     const squares = this.state.squares.slice();
@@ -44,7 +46,7 @@ class WrapGame extends Component {
         </div>
         <div className="d-flex justify-content-center">
           <HistoryPlays
-            history={this.state.history} 
+            history={this.state.history} goPast={this.goPast}
           />
         </div>
       </>

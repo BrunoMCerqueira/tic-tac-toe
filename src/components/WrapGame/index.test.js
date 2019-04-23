@@ -43,4 +43,19 @@ describe("Test WrapSquare Component", () => {
     wrapper.update();
     expect(wrapper.find('li')).toHaveLength(1);
   });
+
+  it('Click on history element, update game', () => {
+    wrapper.find('button').at(1).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('button').at(1).text()).toEqual('X');
+    expect(wrapper.find('li')).toHaveLength(1);
+    wrapper.find('button').at(2).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('button').at(2).text()).toEqual('O');
+    expect(wrapper.find('li')).toHaveLength(2);
+    wrapper.find('li').at(0).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('button').at(1).text()).toEqual('X');
+    expect(wrapper.find('button').at(2).text()).toEqual('');
+  });
 });

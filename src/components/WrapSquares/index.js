@@ -5,16 +5,18 @@ import NextPlayer from "../NextPlayer";
 import HistoryPlays from "../HistoryPlays";
 
 class WrapSquares extends Component {
-  state = { player: "X", squares: Array(9).fill("") };
+  state = { player: "X", squares: Array(9).fill(""), history: [] };
 
   handleClick = (index) => {
-    const { player, squares } = this.state;
+    const { player } = this.state;
+    const squares = this.state.squares.slice();
     squares[index] = player;
 
-    this.setState({ 
+    this.setState(prevState => ({ 
       player: player === "X" ? "O" : "X",
-      squares,
-    });
+      squares: squares,
+      history: prevState.history.concat([squares])
+    }));
   }
 
   multiplySquares = () => {
@@ -36,7 +38,9 @@ class WrapSquares extends Component {
         <main>
           {this.multiplySquares()}
         </main>
-        <HistoryPlays/>
+        <HistoryPlays
+          history={this.state.history} 
+        />
       </div>
     )
   }

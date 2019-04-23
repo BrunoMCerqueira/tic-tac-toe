@@ -7,6 +7,5 @@ describe("Test HistoryPlays Component", ()=>{
 
   it("render a list", () => {
     expect(wrapper.find("ol")).toHaveLength(1);
-    expect(wrapper.find("li")).toHaveLength(1);
   })
 })

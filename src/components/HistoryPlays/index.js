@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 class HistoryPlays extends Component {
   render() {
+    const { history } = this.props;
     return (
       <ol>
-        <li></li>
+        {history && history.map((history, index) => <li key={index}>exemplo</li>)}
       </ol>
     )
   }

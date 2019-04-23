@@ -7,7 +7,7 @@ describe('Test App Component with Enzyme', () => {
   beforeEach(() => { wrapper = mount(<App />); });
 
   it('Renders without crashing', () => {
-    expect(wrapper.find("div")).toHaveLength(1);
+    expect(wrapper.find("div")).toHaveLength(2);
   });
 
   it('Contains a `p` indicating player', () => {

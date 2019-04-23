@@ -33,4 +33,10 @@ describe("Test WrapSquare Component", () => {
     wrapper.update();
     expect(wrapper.find('button').at(2).text()).toEqual('O');
   });
+
+  it('Click button produce a history element', () => {
+    wrapper.find('button').at(1).simulate('click');
+    wrapper.update();
+    expect(wrapper.find('li')).toHaveLength(1);
+  });
 });

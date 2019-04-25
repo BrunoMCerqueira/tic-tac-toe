@@ -1,8 +1,10 @@
 import React from "react";
 import "./styles.css";
 
-const PlayerWins = () => (
-  <p>PLayer 1 wins!</p>
+const PlayerWins = (props) => (
+  <div>
+    <p>The winner is {props.winner}</p>
+  </div>
 )
 
 export default PlayerWins;

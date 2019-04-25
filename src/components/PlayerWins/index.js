@@ -3,7 +3,7 @@ import "./styles.css";
 
 const PlayerWins = (props) => (
   <div>
-    <p>The winner is {props.winner}</p>
+    <p className="winner-message">The winner is {props.winner}</p>
   </div>
 )
 
